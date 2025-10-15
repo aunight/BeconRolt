@@ -6,6 +6,7 @@
   <title>特戰英豪封號神器</title>
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
   <style>
         body {
             box-sizing: border-box;
@@ -84,6 +85,25 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        /* Lightweight reveal animation (fallback when AOS not triggered) */
+        .reveal-init {
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Opacity-only variant to avoid transform conflicts (e.g., floating cards) */
+        .reveal-fade-init {
+            opacity: 0;
+            transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-fade-show {
+            opacity: 1;
+        }
     </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
@@ -118,14 +138,14 @@
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10"><!-- Left Content -->
      <div class="space-y-8">
       <div class="space-y-6">
-       <div class="inline-block px-4 py-2 bg-red-600 bg-opacity-20 border border-red-500 rounded-full text-red-400 text-sm font-medium">
-        🎮亞洲第一 Valorant 封號社群
+       <div id="hero-badge" class="inline-block px-4 py-2 bg-red-600 bg-opacity-20 border border-red-500 rounded-full text-red-400 text-sm font-medium">
+        🎮 亞洲第一 Valorant 封號社群
        </div>
        <h1 id="app-name" class="text-6xl lg:text-7xl font-black leading-tight glow-text">特戰英豪<br>封號神器</h1>
        <p id="app-tagline" class="text-2xl lg:text-3xl text-gray-300 font-light">隨時掌握封號動態</p>
       </div>
-      <p id="app-description" class="text-lg text-gray-400 leading-relaxed max-w-lg">成熟80萬用戶大APP技術打造的特戰英豪輔助工具。提供商店查看、遠端選角、社群互動等核心功能，讓你的封號體驗更上一層樓！</p><!-- YouTube Video Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 pt-6"><a id="youtube-video-1" href="#" target="_blank" rel="noopener noreferrer" class="download-btn text-white px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 font-semibold text-lg">
+      <p id="app-description" class="text-lg text-gray-400 leading-relaxed max-w-lg">成熟80萬用戶大APP技術打造的特戰英豪輔助工具。提供辱罵用戶、造謠抹黑、偷換概念、抄襲他人APP、使用非法API等核心功能，讓你的封號體驗更上一層樓！</p><!-- YouTube Video Buttons -->
+      <div id="hero-buttons" class="flex flex-col sm:flex-row gap-4 pt-6"><a id="youtube-video-1" href="#" target="_blank" rel="noopener noreferrer" class="download-btn text-white px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 font-semibold text-lg">
         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
         </svg>
         <div class="text-left">
@@ -295,16 +315,16 @@
         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
        </div>
-       <h3 id="feature-2" class="text-2xl font-bold text-white mb-4">遠端選角系統</h3>
-       <p class="text-gray-400 leading-relaxed">不在電腦前也能選角，讓隊友不用等你回來就能開始遊戲，提升團隊效率</p>
+       <h3 id="feature-2" class="text-2xl font-bold text-white mb-4">欺騙80萬用戶</h3>
+       <p class="text-gray-400 leading-relaxed">使用非法從Riot逆出來的API，解釋成官方API並持續欺騙用戶</p>
       </div><!-- Feature 3 -->
       <div class="feature-card rounded-3xl p-8 text-center">
        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
        </div>
-       <h3 id="feature-3" class="text-2xl font-bold text-white mb-4">社群互動平台</h3>
-       <p class="text-gray-400 leading-relaxed">與其他玩家交流戰術、分享精彩時刻，建立屬於你的遊戲社群網絡</p>
+       <h3 id="feature-3" class="text-2xl font-bold text-white mb-4">抄襲他人APP設計</h3>
+       <p class="text-gray-400 leading-relaxed">在VALKI APP收藏庫釋出後一個月光速抄襲其設計</p>
       </div>
      </div>
     </div>
@@ -812,6 +832,176 @@
 
         // Initial render
         render(defaultConfig);
+    </script>
+ <script src="assets/vendor/aos/aos.js"></script>
+ <script>
+        // Apply AOS attributes to text and images, then initialize AOS
+        function applyAosAttributes() {
+            // Priority containers to ensure top sections animate as a block
+            const priorityTargets = [
+                'header',
+                '.hero-gradient',
+                '.hero-gradient .space-y-6', // left hero text block
+                '#app-name',
+                '#app-tagline',
+                '#app-description',
+                '#youtube-video-1',
+                '#youtube-video-2',
+                '.phone-mockup',
+                '.feature-card',
+                '.stats-card'
+            ];
+            priorityTargets.forEach(sel => {
+                document.querySelectorAll(sel).forEach(el => {
+                    if (!el.hasAttribute('data-aos')) {
+                        el.setAttribute('data-aos', 'fade-down');
+                        el.setAttribute('data-aos-delay', '0');
+                        el.setAttribute('data-aos-duration', '1000');
+                        el.setAttribute('data-aos-easing', 'cubic-bezier(0.22, 1, 0.36, 1)');
+                    }
+                });
+            });
+
+            // Explicit hero text sequence for stronger presence
+            const heroSequence = [
+                '#hero-badge',
+                '#app-name',
+                '#app-tagline',
+                '#app-description',
+                '#hero-buttons'
+            ];
+            heroSequence.forEach((sel, i) => {
+                document.querySelectorAll(sel).forEach(el => {
+                    el.setAttribute('data-aos', 'fade-down');
+                    el.setAttribute('data-aos-delay', String(150 * i));
+                    el.setAttribute('data-aos-duration', '1100');
+                    el.setAttribute('data-aos-easing', 'cubic-bezier(0.22, 1, 0.36, 1)');
+                    el.setAttribute('data-aos-offset', '0');
+                    el.setAttribute('data-aos-anchor-placement', 'top-center');
+                });
+            });
+
+            // General inline elements and media
+            const selectors = [
+                'h1','h2','h3','h4','h5','h6',
+                'p','span','li','a','button',
+                'img','svg','svg path','.download-btn'
+            ];
+            const elements = document.querySelectorAll(selectors.join(','));
+            let index = 0;
+            elements.forEach(el => {
+                if (!el.hasAttribute('data-aos')) {
+                    const isSvg = el.tagName === 'SVG' || el.tagName === 'PATH';
+                    el.setAttribute('data-aos', isSvg ? 'zoom-in-down' : 'fade-down');
+                    const delay = Math.min(index * 60, 600); // 0,60,...,600ms
+                    el.setAttribute('data-aos-delay', String(delay));
+                    el.setAttribute('data-aos-duration', '1000');
+                    el.setAttribute('data-aos-easing', 'cubic-bezier(0.22, 1, 0.36, 1)');
+                    index += 1;
+                }
+            });
+
+            // Avoid transform conflicts: animate inner content of floating feature cards
+            const floatingInner = document.querySelectorAll('.feature-card.floating .flex, .absolute .feature-card .flex');
+            let fIndex = 0;
+            floatingInner.forEach(el => {
+                if (!el.hasAttribute('data-aos')) {
+                    el.setAttribute('data-aos', 'fade'); // opacity-only to avoid transform clash
+                    // Try to respect existing CSS animation-delay if present (e.g., style="animation-delay: Xs;")
+                    let extraDelay = 0;
+                    const parent = el.closest('.feature-card');
+                    if (parent && parent.style && parent.style.animationDelay) {
+                        const m = parent.style.animationDelay.match(/([\d.]+)s/);
+                        if (m) extraDelay = Math.round(parseFloat(m[1]) * 1000);
+                    }
+                    const delay = Math.min(fIndex * 80 + extraDelay, 800);
+                    el.setAttribute('data-aos-delay', String(delay));
+                    el.setAttribute('data-aos-duration', '1100');
+                    el.setAttribute('data-aos-easing', 'cubic-bezier(0.22, 1, 0.36, 1)');
+                    fIndex += 1;
+                }
+            });
+
+            if (window.AOS) {
+                window.AOS.init({
+                    duration: 1000,
+                    easing: 'cubic-bezier(0.22, 1, 0.36, 1)', // easeOutCubic-ish
+                    once: true,
+                    offset: 40,
+                    anchorPlacement: 'top-bottom',
+                    startEvent: 'DOMContentLoaded'
+                });
+                window.AOS.refresh();
+                // Force a second recalculation to capture first-paint positions
+                requestAnimationFrame(() => {
+                    window.AOS.refreshHard();
+                    setTimeout(() => window.AOS.refresh(), 120);
+                });
+            }
+        }
+
+        // Ensure AOS runs after initial render and DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', applyAosAttributes);
+        } else {
+            applyAosAttributes();
+        }
+        // Ensure in-viewport elements on first paint animate
+        window.addEventListener('load', function() {
+            if (window.AOS) {
+                window.AOS.refreshHard();
+            }
+        });
+        window.addEventListener('resize', function() {
+            if (window.AOS) {
+                window.AOS.refresh();
+            }
+        });
+    </script>
+ <script>
+        // Fallback reveal animations using IntersectionObserver
+        (function(){
+            const heroTargets = [
+                '#hero-badge', '#app-name', '#app-tagline', '#app-description', '#hero-buttons'
+            ];
+            const phoneTargets = ['.phone-mockup'];
+            const floatTargets = [
+                '.absolute .feature-card',
+            ];
+
+            function addInitClasses() {
+                heroTargets.forEach(sel => document.querySelectorAll(sel).forEach(el => el.classList.add('reveal-init')));
+                phoneTargets.forEach(sel => document.querySelectorAll(sel).forEach(el => el.classList.add('reveal-init')));
+                floatTargets.forEach(sel => document.querySelectorAll(sel).forEach(el => el.classList.add('reveal-fade-init')));
+            }
+
+            function observeAndReveal() {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            if (el.classList.contains('reveal-fade-init')) {
+                                el.classList.add('reveal-fade-show');
+                            } else {
+                                el.classList.add('reveal-show');
+                            }
+                            io.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                [...heroTargets, ...phoneTargets, ...floatTargets].forEach(sel => {
+                    document.querySelectorAll(sel).forEach(el => io.observe(el));
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => { addInitClasses(); observeAndReveal(); });
+            } else {
+                addInitClasses();
+                observeAndReveal();
+            }
+        })();
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98eedc9ff7c38412',t:'MTc2MDUyNjU0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

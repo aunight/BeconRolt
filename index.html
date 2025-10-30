@@ -7,6 +7,7 @@
   <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
   <style>
         body {
             box-sizing: border-box;
@@ -45,14 +46,25 @@
             border-radius: 2.5rem;
             padding: 0.5rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 420px;
+            width: 100%;
         }
         
         .phone-screen {
-            background: #000;
             border-radius: 2rem;
-            aspect-ratio: 9/19.5;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 0;
+        }
+        
+        .phone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         .download-btn {
@@ -125,13 +137,13 @@
        </svg>
       </div><span class="text-xl font-bold text-white">VALORANT-封號助手</span>
      </div><!-- Navigation -->
-     <nav class="hidden md:flex items-center space-x-8"><button onclick="showPage('home')" class="nav-link text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="showPage('support')" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 支援 </button> <button onclick="showPage('privacy')" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="showPage('terms')" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
+     <nav class="hidden md:flex items-center space-x-8"><button onclick="navigateToSection('home', this)" class="nav-link text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
      </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden text-white">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div><!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden pb-4">
-     <div class="flex flex-col space-y-3"><button onclick="showPage('home')" class="nav-link text-left text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="showPage('support')" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 支援 </button> <button onclick="showPage('privacy')" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="showPage('terms')" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
+     <div id="mobile-menu" class="md:hidden hidden pb-4">
+     <div class="flex flex-col space-y-3"><button onclick="navigateToSection('home', this)" class="nav-link text-left text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
      </div>
     </div>
    </div>
@@ -147,7 +159,7 @@
      <div class="space-y-8">
       <div class="space-y-6">
        <div id="hero-badge" class="inline-block px-4 py-2 bg-red-600 bg-opacity-20 border border-red-500 rounded-full text-red-400 text-sm font-medium" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
-        🎮 亞洲第一 Valorant 封號社群
+        🎮 亞洲第一 Valorant 封號APP
        </div>
        <h1 id="app-name" class="text-6xl lg:text-7xl font-black leading-tight glow-text" data-aos="fade-down" data-aos-delay="150" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">特戰英豪<br>封號神器</h1>
        <p id="app-tagline" class="text-2xl lg:text-3xl text-gray-300 font-light" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">隨時掌握封號動態</p>
@@ -178,32 +190,16 @@
     </div><!-- Right Phone Mockup -->
     <div class="flex justify-center lg:justify-end relative" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
      <div class="phone-mockup floating">
-       <div class="phone-screen w-72 flex flex-col"><!-- Phone Status Bar -->
-        <div class="bg-black text-white text-xs px-6 py-3 flex justify-between items-center"><span class="font-medium">9:41</span>
-         <div class="flex items-center space-x-1">
-          <div class="flex space-x-1">
-           <div class="w-1 h-1 bg-white rounded-full"></div>
-           <div class="w-1 h-1 bg-white rounded-full"></div>
-           <div class="w-1 h-1 bg-white rounded-full opacity-50"></div>
-          </div>
-          <svg class="w-6 h-3 text-white ml-2" fill="currentColor" viewbox="0 0 24 12"><rect x="1" y="3" width="18" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1" /> <rect x="20" y="5" width="2" height="2" rx="1" />
-          </svg>
-         </div>
+       <div class="phone-screen w-72">
+           <img src="assets/img/1280.png"
+           alt="VALORANT-封號助手">
         </div><!-- App Interface -->
-        <div class="flex-1 valorant-red p-8 flex flex-col"><!-- App Header -->
-         <div class="text-center mb-8">
-          <div class="w-20 h-20 bg-white bg-opacity-20 rounded-3xl flex items-center justify-center mx-auto mb-4 backdrop-filter backdrop-blur-sm">
-         <img src="assets/img/1280.png" alt="VALORANT-封號助手">
-         </div>
-        </div>
-       </div>
       </div><!-- Floating Feature Cards -->
       <div class="absolute inset-0 pointer-events-none"><!-- Card 1 - Top Left -->
-       <div class="absolute -top-8 -left-16 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 0s;">
+       <div class="absolute -top-8 -left-20 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 0s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" />
-          </svg>
+          <i class="bi bi-exclamation-circle text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -218,8 +214,7 @@
        <div class="absolute -top-4 -right-20 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 1s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="150" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-          </svg>
+          <i class="bi bi-layout-three-columns text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -231,11 +226,10 @@
          </div>
         </div>
        </div><!-- Card 3 - Middle Left -->
-       <div class="absolute top-16 -left-24 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 2s;">
+       <div class="absolute top-16 -left-16 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 2s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" />
-          </svg>
+          <i class="bi bi-lock text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -247,11 +241,10 @@
          </div>
         </div>
        </div><!-- Card 4 - Middle Right -->
-       <div class="absolute top-24 -right-16 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 3s;">
+       <div class="absolute top-24 -right-28 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 3s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" />
-          </svg>
+          <i class="bi bi-exclamation-triangle text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -263,11 +256,10 @@
          </div>
         </div>
        </div><!-- Card 5 - Bottom Left -->
-       <div class="absolute bottom-8 -left-20 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 4s;">
+       <div class="absolute bottom-8 -left-18 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 4s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="600" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" /> <path fill-rule="evenodd" d="M3 8a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
-          </svg>
+          <i class="bi bi-menu-button-wide text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -279,11 +271,10 @@
          </div>
         </div>
        </div><!-- Card 6 - Bottom Right -->
-       <div class="absolute bottom-4 -right-24 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 5s;">
+       <div class="absolute bottom-4 -right-48 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 5s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="750" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" />
-          </svg>
+          <i class="bi bi-person-x text-white text-xl"></i>
          </div>
          <div>
           <div class="text-white font-medium text-sm">
@@ -299,78 +290,129 @@
      </div>
     </div>
    </section><!-- Features Section -->
-   <section class="py-24 bg-gray-900 relative">
+   <section id="official" class="py-24 bg-gray-900 relative">
     <div class="max-w-7xl mx-auto px-4">
      <div class="text-center mb-20">
-      <h2 class="text-5xl font-bold text-white mb-6">核心功能</h2>
-      <p class="text-xl text-gray-400 max-w-2xl mx-auto">基於被欺騙80萬用戶的成熟技術，為VALORANT玩家量身打造</p>
+      <h2 class="text-5xl lg:text-6xl font-black leading-tight text-white mb-4">Riot 官方認證第三方軟體</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">欺騙80萬用戶，並造謠抹黑吹哨者，惡意辱罵用戶</p>
      </div>
-     <div class="grid lg:grid-cols-3 gap-8"><!-- Feature 1 -->
-      <div class="feature-card rounded-3xl p-8 text-center">
-       <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-        </svg>
+     <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: Image with phone frame -->
+      <div class="flex justify-center lg:justify-start">
+       <div class="phone-mockup">
+        <div class="phone-screen" style="max-height: 600px;">
+         <img src="assets/img/2.png" alt="展示圖 img2" style="object-fit: cover; object-position: top; height: 100%; width: 100%;" />
+        </div>
        </div>
-       <h3 id="feature-1" class="text-2xl font-bold text-white mb-4">辱罵被封號玩家</h3>
-       <p class="text-gray-400 leading-relaxed">昨天半夜走在路上被你性侵了，你要自己證明你沒做，否則你就是性侵我</p>
-      </div><!-- Feature 2 -->
-      <div class="feature-card rounded-3xl p-8 text-center">
-       <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
+      </div>
+      <!-- Right: Features -->
+      <div class="grid sm:grid-cols-2 gap-8">
+       <!-- Feature 1 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-person-exclamation text-white text-5xl"></i>
+        </div>
+        <h3 id="feature-1" class="text-2xl font-bold text-white mb-4">辱罵被封號玩家</h3>
+        <p class="text-gray-400 leading-relaxed">昨天半夜走在路上被你性侵了，你要自己證明你沒做，否則你就是性侵我</p>
        </div>
-       <h3 id="feature-2" class="text-2xl font-bold text-white mb-4">欺騙80萬用戶</h3>
-       <p class="text-gray-400 leading-relaxed">使用非法從Riot逆出來的API，解釋成官方API並持續欺騙用戶</p>
-      </div><!-- Feature 3 -->
-      <div class="feature-card rounded-3xl p-8 text-center">
-       <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
+       <!-- Feature 2 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-shield-exclamation text-white text-5xl"></i>
+        </div>
+        <h3 id="feature-2" class="text-2xl font-bold text-white mb-4">欺騙80萬用戶</h3>
+        <p class="text-gray-400 leading-relaxed">使用非法從Riot逆出來的API，解釋成官方API並持續欺騙用戶</p>
        </div>
-       <h3 id="feature-3" class="text-2xl font-bold text-white mb-4">抄襲他人APP設計</h3>
-       <p class="text-gray-400 leading-relaxed">在VALKI APP收藏庫釋出後一個月光速抄襲其設計</p>
+       <!-- Feature 3 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-files text-white text-5xl"></i>
+        </div>
+        <h3 id="feature-3" class="text-2xl font-bold text-white mb-4">抄襲他人APP設計</h3>
+        <p class="text-gray-400 leading-relaxed">在VALKI APP收藏庫釋出後一個月光速抄襲其設計</p>
+       </div>
+       <!-- Feature 4 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-megaphone text-white text-5xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">造謠吹哨者</h3>
+        <p class="text-gray-400 leading-relaxed">對揭露問題者進行抹黑與攻擊</p>
+       </div>
+       <!-- Feature 5 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-badge-ad text-white text-5xl"></i>
+        </div>
+       <h3 class="text-2xl font-bold text-white mb-4">虛假宣傳</h3>
+        <p class="text-gray-400 leading-relaxed">FB,DC假官方社群管理員造謠API皆為官方一般版帳號沒問題</p>
+       </div>
+       <!-- Feature 6 -->
+       <div class="feature-card rounded-3xl p-8 text-center">
+        <div class="w-20 h-20 valorant-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+         <i class="bi bi-person-dash text-white text-5xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">甩鍋給用戶</h3>
+        <p class="text-gray-400 leading-relaxed">問題一律怪玩家操作或環境</p>
+       </div>
       </div>
      </div>
     </div>
    </section><!-- Stats Section -->
-   <section class="py-24 bg-black">
+   <section id="evidence" class="py-24 bg-black">
     <div class="max-w-6xl mx-auto px-4">
-     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-white mb-4" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">數據說話</h2>
-      <p class="text-xl text-gray-400" data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">借用成熟技術，欺騙廣大玩家</p>
+     <div class="text-center mb-12">
+      <h2 class="text-5xl lg:text-6xl font-black leading-tight text-white mb-4" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">抄襲證據</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-down" data-aos-delay="120" data-aos-duration="1000">以下為封號助手與 VALKI 的版面對照與時間線重疊點整理</p>
      </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <div class="stats-card rounded-3xl p-8 text-center" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000">
-       <div class="text-5xl font-black text-red-500 mb-2">
-        80萬+
+
+     <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <!-- Left: 3（疑似抄襲方） -->
+      <div class="space-y-4" data-aos="fade-down" data-aos-delay="160" data-aos-duration="1100">
+       <div class="phone-mockup">
+        <div class="phone-screen">
+         <img src="assets/img/3.png" alt="封號助手截圖" />
+        </div>
        </div>
-       <div class="text-gray-400 text-lg">
-        借用用戶基數
-       </div>
-       <div class="text-gray-500 text-sm mt-2">
-        成熟技術保障
-       </div>
-      </div>
-      <div class="stats-card rounded-3xl p-8 text-center" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
-       <div class="text-5xl font-black text-red-500 mb-2">
-        4.6★
-       </div>
-       <div class="text-gray-400 text-lg">
-        VALORANT玩家評分
-       </div>
-       <div class="text-gray-500 text-sm mt-2">
-        用戶滿意度高
+       <div class="text-center">
+        <span class="inline-block px-3 py-1 valorant-red rounded-full text-sm">封號助手 非原創</span>
+        <h3 class="text-2xl font-bold mt-3">後發上線，樣式與動效高度一致</h3>
+        <p class="text-gray-400 mt-2">版面結構、色彩階層、字級比例、卡片圓角與浮動動畫節奏均與 4 一致。</p>
        </div>
       </div>
-      <div class="stats-card rounded-3xl p-8 text-center" data-aos="fade-down" data-aos-delay="600" data-aos-duration="1000">
-       <div class="text-5xl font-black text-red-500 mb-2">
-        24/7
+
+      <!-- Right: 4（我方原創） -->
+      <div class="space-y-4" data-aos="fade-down" data-aos-delay="240" data-aos-duration="1100">
+       <div class="phone-mockup">
+        <div class="phone-screen">
+         <img src="assets/img/4.png" alt="VALKI截圖" />
+        </div>
        </div>
-       <div class="text-gray-400 text-lg">
-        全天候服務
+       <div class="text-center">
+        <span class="inline-block px-3 py-1 valorant-red rounded-full text-sm">VALKI 我方原創</span>
+        <h3 class="text-2xl font-bold mt-3">原創設計 · 先行公開</h3>
+        <p class="text-gray-400 mt-2">完整定義布局網格、間距系統、色板與微交互動效（進場、懸浮、陰影層級）。</p>
        </div>
-       <div class="text-gray-500 text-sm mt-2">
-        隨時隨地可用
+      </div>
+     </div>
+
+     <!-- 詳細說明 -->
+     <div class="feature-card rounded-3xl p-8 mt-12" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1100">
+      <h3 class="text-2xl font-bold text-white mb-4">詳細說明</h3>
+      <ul class="text-gray-300 space-y-3 list-disc list-inside">
+       <li><span class="text-white font-semibold">整體排版：</span>網格、間距、卡片圓角、陰影層級與留白策略幾乎相同。</li>
+       <li><span class="text-white font-semibold">視覺元素：</span>色彩比例、圖示用法、字級層級與按鈕樣式高度重疊。</li>
+       <li><span class="text-white font-semibold">資訊結構：</span>標題/副標/說明/CTA 的排序與層級安排相同。</li>
+       <li><span class="text-white font-semibold">時間線：</span>我方原創先公開，對方於約 30 天內上線相同布局與動效。</li>
+      </ul>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-gray-400">
+       <div class="stats-card rounded-2xl p-4">
+        <div class="font-semibold text-white">T0 我方原創釋出</div>
+        <div>公開原型、版面與動效規範</div>
+       </div>
+       <div class="stats-card rounded-2xl p-4">
+        <div class="font-semibold text-white">T+30 天 對方上線</div>
+        <div>整體排版與動畫節奏高度一致</div>
        </div>
       </div>
      </div>
@@ -804,23 +846,39 @@
                 targetPage.classList.add('active');
             }
             
-            // Update navigation active states
+            // Close mobile menu
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.add('hidden');
+        }
+        
+        function setActiveNav(el) {
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.classList.remove('text-white');
                 link.classList.add('text-gray-300');
             });
-            
-            // Set active nav link
-            const activeLinks = document.querySelectorAll(`[onclick="showPage('${pageId}')"]`);
-            activeLinks.forEach(link => {
-                link.classList.remove('text-gray-300');
-                link.classList.add('text-white');
-            });
-            
-            // Close mobile menu
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.add('hidden');
+            if (el) {
+                el.classList.remove('text-gray-300');
+                el.classList.add('text-white');
+            }
+        }
+        
+        function navigateToSection(sectionId, el) {
+            showPage('home');
+            setActiveNav(el);
+            if (sectionId === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+        
+        function navigateToPage(pageId, el) {
+            showPage(pageId);
+            setActiveNav(el);
         }
         
         // Mobile menu toggle

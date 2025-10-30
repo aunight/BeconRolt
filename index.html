@@ -202,7 +202,7 @@
           style="width: 100%; height: auto; display: block; object-fit: contain; border-radius: 2rem;">
        </div><!-- App Interface -->
      </div><!-- Floating Feature Cards -->
-      <div class="absolute inset-0 pointer-events-none"><!-- Card 1 - Top Left -->
+      <div class="absolute inset-0 pointer-events-none hidden lg:block"><!-- Card 1 - Top Left -->
        <div class="absolute -top-8 -left-20 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 0s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="0" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
@@ -233,7 +233,7 @@
          </div>
         </div>
        </div><!-- Card 3 - Middle Left -->
-       <div class="absolute top-16 -left-16 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 2s;">
+       <div class="absolute top-36 -left-16 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 2s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
           <i class="bi bi-lock text-white text-xl"></i>
@@ -248,7 +248,7 @@
          </div>
         </div>
        </div><!-- Card 4 - Middle Right -->
-       <div class="absolute top-24 -right-28 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 3s;">
+       <div class="absolute top-64 -right-28 feature-card rounded-2xl p-4 backdrop-filter backdrop-blur-sm floating pointer-events-auto" style="animation-delay: 3s;">
         <div class="flex items-center space-x-3" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1100" data-aos-offset="0" data-aos-anchor-placement="top-center">
          <div class="w-8 h-8 valorant-red rounded-lg flex items-center justify-center">
           <i class="bi bi-exclamation-triangle text-white text-xl"></i>
@@ -423,9 +423,9 @@
        <div id="timeline-card-1" class="stats-card rounded-2xl p-4 cursor-pointer collapsible" aria-expanded="false">
         <div class="flex items-center gap-3" data-collapse-header>
          <img src="assets/img/logo.png" alt="VALKI上線時間縮圖" class="w-16 h-16 object-contain flex-shrink-0" />
-         <div class="flex-1">
-          <div class="font-semibold text-white">VALKI 上線時間</div>
-          <div class="mt-2 text-green-400 font-bold text-2xl">2025/4/24</div>
+         <div class="flex-1 min-w-0">
+          <div class="font-semibold text-white text-xs sm:text-sm break-words">VALKI 上線時間</div>
+          <div class="mt-1 text-green-400 font-bold text-base sm:text-lg md:text-xl lg:text-2xl break-words">2025/4/24</div>
          </div>
          <svg data-collapse-arrow class="w-6 h-6 text-gray-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </div>
@@ -437,9 +437,9 @@
        <div id="timeline-card-2" class="stats-card rounded-2xl p-4 cursor-pointer collapsible" aria-expanded="false">
         <div class="flex items-center gap-3" data-collapse-header>
          <img src="assets/img/logo2.png" alt="抄襲助手上線時間縮圖" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" style="filter: blur(8px);" />
-         <div class="flex-1">
-          <div class="font-semibold text-white">抄襲助手 上線時間</div>
-          <div class="mt-2 text-red-400 font-bold text-2xl">2025/5/27</div>
+         <div class="flex-1 min-w-0">
+          <div class="font-semibold text-white text-xs sm:text-sm break-words">抄襲助手 上線時間</div>
+          <div class="mt-1 text-red-400 font-bold text-base sm:text-lg md:text-xl lg:text-2xl break-words">2025/5/27</div>
          </div>
          <svg data-collapse-arrow class="w-6 h-6 text-gray-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </div>

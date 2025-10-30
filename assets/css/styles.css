@@ -1,0 +1,7 @@
+
+/* === Responsive image helpers === */
+.responsive-img{width:100%;height:auto;display:block;}
+.responsive-img.contain{object-fit:contain;}
+.responsive-img.cover{height:100%;object-fit:cover;}
+/* Optional frame to constrain width and center */
+.img-frame{max-width:1200px;margin:0 auto;}

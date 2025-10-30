@@ -130,6 +130,12 @@
         .collapsible.open .collapsible-content { max-height: 2000px; }
         .collapsible [data-collapse-arrow] { transition: transform 0.3s ease; transform: rotate(0deg); }
         .collapsible.open [data-collapse-arrow] { transform: rotate(180deg); }
+
+        /* Page fade transitions */
+        .page.fade-in { animation: fadeIn 280ms ease forwards; }
+        .page.fade-out { animation: fadeOut 220ms ease forwards; }
+        @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+        @keyframes fadeOut { from { opacity: 1 } to { opacity: 0 } }
     </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
@@ -143,15 +149,15 @@
        </svg>
       </div><span class="text-xl font-bold text-white">VALORANT-封號助手</span>
      </div><!-- Navigation -->
-     <nav class="hidden md:flex items-center space-x-8"><button onclick="navigateToSection('home', this)" class="nav-link text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
-     </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden text-white">
+     <nav class="hidden md:flex items-center space-x-8"><button onclick="navigateToSection('home', this)" class="nav-link text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button>
+      </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden text-white">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div><!-- Mobile Menu -->
      <div id="mobile-menu" class="md:hidden hidden pb-4">
-     <div class="flex flex-col space-y-3"><button onclick="navigateToSection('home', this)" class="nav-link text-left text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button>
+     <div class="flex flex-col space-y-3"><button onclick="navigateToSection('home', this)" class="nav-link text-left text-white hover:text-red-400 transition-colors font-medium"> 首頁 </button> <button onclick="navigateToSection('official', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 官方認證 </button> <button onclick="navigateToSection('evidence', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 抄襲證據 </button> <button onclick="navigateToPage('terms', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 服務條款 </button> <button onclick="navigateToPage('privacy', this)" class="nav-link text-left text-gray-300 hover:text-red-400 transition-colors font-medium"> 隱私政策 </button>
+      </div>
      </div>
-    </div>
    </div>
   </header><!-- Home Page -->
   <div id="home-page" class="page active"><!-- Hero Section -->
@@ -563,77 +569,135 @@
     <div class="max-w-4xl mx-auto px-4">
      <div class="text-center mb-16">
       <h1 class="text-5xl font-bold text-white mb-6 glow-text">隱私政策</h1>
-      <p class="text-xl text-gray-400">我們重視並保護你的隱私權</p>
-      <p class="text-sm text-gray-500 mt-2">最後更新：2024年1月1日</p>
+      <p class="text-xl text-gray-400">因為不想讓用戶了解隱私政策所以都用英文的</p>
+      <p class="text-sm text-gray-500 mt-2">Last updated: August 18, 2022</p>
      </div>
      <div class="feature-card rounded-3xl p-8 space-y-8">
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">資料收集</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Privacy Policy</h2>
        <div class="text-gray-400 space-y-3">
-        <p>我們可能收集以下類型的資訊：</p>
+        <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You. We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Interpretation and Definitions</h2>
+       <div class="text-gray-400 space-y-3">
+        <p><strong>Interpretation:</strong> The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+        <p><strong>Definitions:</strong> For the purposes of this Privacy Policy:</p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>遊戲帳號資訊（用於APP功能運作）</li>
-         <li>裝置資訊（作業系統版本、裝置型號）</li>
-         <li>使用統計資料（功能使用頻率、錯誤報告）</li>
-         <li>網路連線資訊（IP位址、連線狀態）</li>
+         <li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
+         <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+         <li><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named 封號助手.</li>
+         <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to 封號助手.</li>
+         <li><strong>Country</strong> refers to: Taiwan</li>
+         <li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+         <li><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</li>
+         <li><strong>Service</strong> refers to the Application.</li>
+         <li><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company.</li>
+         <li><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself.</li>
+         <li><strong>You</strong> means the individual accessing or using the Service.</li>
         </ul>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">資料使用</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Collecting and Using Your Personal Data</h2>
        <div class="text-gray-400 space-y-3">
-        <p>我們使用收集的資料用於：</p>
+        <h3 class="text-white font-semibold">Types of Data Collected</h3>
+        <p><strong>Personal Data:</strong> While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You.</p>
+        <p><strong>Usage Data:</strong> Usage Data is collected automatically when using the Service. Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+        <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+        <h3 class="text-white font-semibold mt-4">Use of Your Personal Data</h3>
+        <p>The Company may use Personal Data for the following purposes:</p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>提供和維護APP服務功能</li>
-         <li>改善用戶體驗和APP效能</li>
-         <li>提供技術支援和客戶服務</li>
-         <li>分析使用模式以優化功能</li>
-         <li>確保APP安全性和防止濫用</li>
+         <li>To provide and maintain our Service, including to monitor the usage of our Service.</li>
+         <li>To manage Your Account: to manage Your registration as a user of the Service.</li>
+         <li>For the performance of a contract: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased.</li>
+         <li>To contact You: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication.</li>
+         <li>To provide You with news, special offers and general information about other goods, services and events.</li>
+         <li>To manage Your requests: To attend and manage Your requests to Us.</li>
+         <li>For business transfers: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets.</li>
+         <li>For other purposes: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns.</li>
         </ul>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">資料保護</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Sharing Your Personal Information</h2>
        <div class="text-gray-400 space-y-3">
-        <p>我們採取以下措施保護你的資料：</p>
+        <p>We may share Your personal information in the following situations:</p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>使用業界標準的加密技術</li>
-         <li>定期進行安全性評估和更新</li>
-         <li>限制員工對個人資料的存取權限</li>
-         <li>遵循相關的資料保護法規</li>
+         <li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.</li>
+         <li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
+         <li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy.</li>
+         <li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
+         <li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
+         <li><strong>With Your consent:</strong> We may disclose Your personal information for any other purpose with Your consent.</li>
         </ul>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">第三方服務</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Retention of Your Personal Data</h2>
        <div class="text-gray-400 space-y-3">
-        <p>本APP可能使用第三方服務，包括：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>Riot Games API（用於遊戲資料存取）</li>
-         <li>分析服務（用於改善APP效能）</li>
-         <li>雲端儲存服務（用於資料備份）</li>
-        </ul>
-        <p class="mt-3">這些第三方服務有各自的隱私政策，我們建議你詳細閱讀。</p>
+        <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+        <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">你的權利</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Transfer of Your Personal Data</h2>
        <div class="text-gray-400 space-y-3">
-        <p>你有權：</p>
+        <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+        <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer. The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Disclosure of Your Personal Data</h2>
+       <div class="text-gray-400 space-y-3">
+        <h3 class="text-white font-semibold">Business Transactions</h3>
+        <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+        <h3 class="text-white font-semibold">Law enforcement</h3>
+        <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+        <h3 class="text-white font-semibold">Other legal requirements</h3>
+        <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>查詢我們持有的你的個人資料</li>
-         <li>要求更正不正確的資料</li>
-         <li>要求刪除你的個人資料</li>
-         <li>撤回同意資料處理</li>
-         <li>將資料轉移到其他服務</li>
+         <li>Comply with a legal obligation</li>
+         <li>Protect and defend the rights or property of the Company</li>
+         <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+         <li>Protect the personal safety of Users of the Service or the public</li>
+         <li>Protect against legal liability</li>
         </ul>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">聯絡我們</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Security of Your Personal Data</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+        <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Links to Other Websites</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+        <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Changes to this Privacy Policy</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+        <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
+        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Contact Us</h2>
        <div class="text-gray-400">
-        <p>如果你對本隱私政策有任何疑問，請透過以下方式聯絡我們：</p>
-        <p class="mt-3"><strong>電子郵件：</strong> privacy@valoranthelper.com<br><strong>地址：</strong> 台北市信義區信義路五段7號</p>
+        <p>You can not contact us</p>
        </div>
       </section>
      </div>
@@ -645,105 +709,166 @@
     <div class="max-w-4xl mx-auto px-4">
      <div class="text-center mb-16">
       <h1 class="text-5xl font-bold text-white mb-6 glow-text">服務條款</h1>
-      <p class="text-xl text-gray-400">使用本APP前請詳細閱讀以下條款</p>
+      <p class="text-xl text-gray-400">因為不想讓用戶了解服務條款所以都用英文</p>
       <p class="text-sm text-gray-500 mt-2">最後更新：2024年1月1日</p>
      </div>
      <div class="feature-card rounded-3xl p-8 space-y-8">
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">服務說明</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Terms and Conditions</h2>
        <div class="text-gray-400 space-y-3">
-        <p>VALORANT助手是一款第三方輔助應用程式，提供以下服務：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>遊戲商店資訊查看</li>
-         <li>遠端角色選擇功能</li>
-         <li>玩家社群互動平台</li>
-         <li>遊戲統計資料分析</li>
-        </ul>
-        <p class="mt-3 text-yellow-400 font-semibold">⚠️ 本APP為非官方第三方應用，與Riot Games無直接關聯</p>
+        <p>Last updated: August 06, 2024</p>
+        <p>Please read these terms and conditions carefully before using Our Service.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">使用條件</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Interpretation and Definitions</h2>
        <div class="text-gray-400 space-y-3">
-        <p>使用本服務時，你同意：</p>
+        <h3 class="text-white font-semibold">Interpretation</h3>
+        <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+        <h3 class="text-white font-semibold mt-2">Definitions</h3>
+        <p>For the purposes of these Terms and Conditions:</p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>年滿13歲或在法定監護人同意下使用</li>
-         <li>提供真實且準確的帳號資訊</li>
-         <li>遵守VALORANT官方遊戲規則</li>
-         <li>不進行任何違法或有害的活動</li>
-         <li>不嘗試破解或逆向工程本APP</li>
-         <li>不使用本APP進行商業用途</li>
-        </ul>
-       </div>
-      </section>
-      <section>
-       <h2 class="text-2xl font-bold text-white mb-4">禁止行為</h2>
-       <div class="text-gray-400 space-y-3">
-        <p>以下行為是被禁止的：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>使用自動化工具或機器人</li>
-         <li>嘗試獲取其他用戶的帳號資訊</li>
-         <li>上傳惡意軟體或病毒</li>
-         <li>騷擾、威脅或侮辱其他用戶</li>
-         <li>發布不當或違法內容</li>
-         <li>規避或破壞APP的安全措施</li>
+         <li><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named 封號助手.</li>
+         <li><strong>Application Store</strong> means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.</li>
+         <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+         <li><strong>Country</strong> refers to: Taiwan.</li>
+         <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to 封號助手.</li>
+         <li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+         <li><strong>Service</strong> refers to the Application.</li>
+         <li><strong>Terms and Conditions</strong> (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
+         <li><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
+         <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
         </ul>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">免責聲明</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Acknowledgment</h2>
        <div class="text-gray-400 space-y-3">
-        <p>請注意以下重要聲明：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>本APP按「現狀」提供，不保證無錯誤或中斷</li>
-         <li>我們不對因使用本APP造成的任何損失負責</li>
-         <li>遊戲帳號安全由用戶自行負責</li>
-         <li>Riot Games可能隨時更改API，影響APP功能</li>
-         <li>我們保留隨時修改或終止服務的權利</li>
-        </ul>
+        <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
+        <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
+        <p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
+        <p>You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.</p>
+        <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">帳號終止</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Links to Other Websites</h2>
        <div class="text-gray-400 space-y-3">
-        <p>在以下情況下，我們可能暫停或終止你的帳號：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>違反本服務條款</li>
-         <li>進行欺詐或非法活動</li>
-         <li>濫用APP功能或資源</li>
-         <li>長期未使用帳號（超過12個月）</li>
-        </ul>
+        <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
+        <p>The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+        <p>We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">智慧財產權</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Termination</h2>
        <div class="text-gray-400 space-y-3">
-        <p>關於智慧財產權的重要資訊：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>VALORANT商標和內容歸Riot Games所有</li>
-         <li>本APP的原創程式碼和設計歸我們所有</li>
-         <li>用戶生成的內容歸用戶所有</li>
-         <li>未經許可不得複製或分發本APP</li>
-        </ul>
+        <p>We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
+        <p>Upon termination, Your right to use the Service will cease immediately.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">條款變更</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
        <div class="text-gray-400 space-y-3">
-        <p>我們保留隨時修改本服務條款的權利。重大變更將透過以下方式通知：</p>
-        <ul class="list-disc list-inside space-y-2 ml-4">
-         <li>APP內通知</li>
-         <li>電子郵件通知</li>
-         <li>官方網站公告</li>
-        </ul>
-        <p class="mt-3">繼續使用本服務即表示你接受修改後的條款。</p>
+        <p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.</p>
+        <p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever, even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
        </div>
       </section>
       <section>
-       <h2 class="text-2xl font-bold text-white mb-4">聯絡資訊</h2>
+       <h2 class="text-2xl font-bold text-white mb-4">"AS IS" and "AS AVAILABLE" Disclaimer</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company and its Affiliates expressly disclaim all warranties, whether express, implied, statutory or otherwise, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement.</p>
+        <p>Without limiting the foregoing, the Company makes no representation or warranty that the Service will be uninterrupted or error-free; as to the accuracy, reliability, or currency of any information or content provided; or that the Service, its servers, the content, or e-mails sent are free of viruses or other harmful components.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Governing Law</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>The laws of the Country, excluding its conflicts of law rules, shall govern these Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Disputes Resolution</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">For European Union (EU) Users</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">United States Legal Compliance</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Severability and Waiver</h2>
+       <div class="text-gray-400 space-y-3">
+        <h3 class="text-white font-semibold">Severability</h3>
+        <p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible and the remaining provisions will continue in full force and effect.</p>
+        <h3 class="text-white font-semibold mt-2">Waiver</h3>
+        <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not affect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Translation Interpretation</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>These Terms and Conditions may have been translated. You agree that the original English text shall prevail in the case of a dispute.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Changes to These Terms and Conditions</h2>
+       <div class="text-gray-400 space-y-3">
+        <p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect.</p>
+        <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, please stop using the Service.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Subscription and Payment Terms</h2>
+       <div class="text-gray-400 space-y-2">
+        <p>1.1 封號助手 offers subscription-based services. By subscribing to our service, you agree to pay the fees as described at the time of your subscription.</p>
+        <p>1.2 Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. You can cancel anytime through your iTunes account settings.</p>
+        <p>1.3 Payment will be charged to your iTunes Account at confirmation of purchase.</p>
+        <p>1.4 Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.</p>
+        <p>1.5 Your account will be charged for renewal within 24-hours prior to the end of the current period.</p>
+        <p>1.6 You can manage your subscriptions and turn off auto-renewal by going to your Account Settings after purchase.</p>
+        <p>1.7 No refund of the current subscription period is available upon cancellation of the subscription.</p>
+        <p>1.8 Any unused portion of a free trial period will be forfeited when you purchase a subscription.</p>
+        <p>1.9 Prices of subscriptions are subject to change upon notice from 封號助手. Any price changes will take effect at the next subscription renewal date.</p>
+        <p>1.10 封號助手 reserves the right to modify, suspend, or discontinue the Service (or any part or content thereof) at any time with or without notice to you, and we will not be liable to you or to any third party for any such modification, suspension, or discontinuation.</p>
+        <p>1.11 In the event that 封號助手 chooses to discontinue the app or Service, you acknowledge and agree that you will not be entitled to a refund of any prepaid fees for the current subscription period.</p>
+        <p>1.12 You agree that 封號助手 is not required to provide a refund for any reason, and that you will not receive money or other compensation for unused subscription time when the Service is discontinued.</p>
+        <p>1.13 封號助手 is not responsible for refunding any charges incurred through your use of the iTunes Store or your mobile carrier. Any refunds or credits for purchases made through the iTunes Store must be requested through Apple, not 封號助手.</p>
+        <p>1.14 If technical problems prevent or unreasonably delay delivery of the Service, your exclusive and sole remedy is either replacement of the Service or refund of the subscription price, as determined by 封號助手.</p>
+        <p>1.15 By subscribing, you acknowledge that the Service is provided "as is" and that 封號助手 makes no warranties regarding the availability, reliability, or continuity of the Service.</p>
+        <p>1.16 封號助手 reserves the right to offer promotional trial or discounted subscription periods. These offers are subject to the terms specified at the time of offer.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Account Termination</h2>
+       <div class="text-gray-400 space-y-2">
+        <p>2.1 You may terminate your account at any time by discontinuing use of our Service or by contacting us.</p>
+        <p>2.2 We reserve the right to suspend or terminate your account and your access to the Service at our sole discretion, without notice, for conduct that we believe violates these Terms of Service or is harmful to other users of the Service, us, or third parties.</p>
+        <p>2.3 Upon termination, your right to use the Service will immediately cease. We may delete any content or other materials relating to your use of the Service and we will have no liability to you or any third party for doing so.</p>
+        <p>2.4 Any suspension, termination, or cancellation will not affect your obligations to 封號助手 under these Terms of Service which by their sense and context are intended to survive such suspension, termination, or cancellation.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">User-Generated Content</h2>
+       <div class="text-gray-400 space-y-2">
+        <p>3.1 Our Service may allow you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("User Content"). You are responsible for the User Content that you post on or through the Service, including its legality, reliability, and appropriateness.</p>
+        <p>3.2 By posting User Content on or through the Service, You represent and warrant that: (i) the User Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and (ii) that the posting of your User Content on or through the Service does not violate the rights of any person or entity.</p>
+        <p>3.3 You retain any and all of your rights to any User Content you submit, post or display on or through the Service and you are responsible for protecting those rights. We take no responsibility and assume no liability for User Content you or any third party posts.</p>
+        <p>3.4 We reserve the right to remove any User Content from the Service at our discretion, without prior notice, for any reason or no reason, including content that in our sole judgment violates these Terms or could give rise to liability for 封號助手.</p>
+       </div>
+      </section>
+      <section>
+       <h2 class="text-2xl font-bold text-white mb-4">Contact Us</h2>
        <div class="text-gray-400">
-        <p>如有任何關於服務條款的疑問，請聯絡我們：</p>
-        <p class="mt-3"><strong>電子郵件：</strong> legal@valoranthelper.com<br><strong>客服信箱：</strong> support@valoranthelper.com<br><strong>地址：</strong> 台北市信義區信義路五段7號</p>
+        <p>You can not contact us</p>
        </div>
       </section>
      </div>
@@ -863,16 +988,30 @@
 
         // Page navigation functions
         function showPage(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
+            const current = document.querySelector('.page.active');
             const targetPage = document.getElementById(pageId + '-page');
-            if (targetPage) {
-                targetPage.classList.add('active');
+
+            if (!targetPage) return;
+
+            // If switching to same page, just ensure visible
+            if (current === targetPage) return;
+
+            // Fade out current, then show target with fade-in
+            if (current) {
+                current.classList.remove('fade-in');
+                current.classList.add('fade-out');
+                current.addEventListener('animationend', function handler() {
+                    current.classList.remove('active', 'fade-out');
+                    current.removeEventListener('animationend', handler);
+                    targetPage.classList.add('active', 'fade-in');
+                }, { once: true });
+            } else {
+                // No current page
+                pages.forEach(p => p.classList.remove('active'));
+                targetPage.classList.add('active', 'fade-in');
             }
-            
+
             // Close mobile menu
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.add('hidden');
@@ -906,6 +1045,9 @@
         function navigateToPage(pageId, el) {
             showPage(pageId);
             setActiveNav(el);
+            if (pageId === 'privacy' || pageId === 'terms') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
         
         // Mobile menu toggle
